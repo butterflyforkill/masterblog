@@ -11,6 +11,15 @@ def generate_random_id():
     return str(uuid.uuid4())
 
 
+def delete_post_by_id(post_id):
+    for post in blog_posts:
+        if post['id'] == post_id:
+            blog_posts.remove(post)
+            json_parcer.write_file('data.json', blog_posts)
+            return True  # Return True if post is deleted
+    return False  # Return False if post_id is not found
+
+
 @app.route('/')
 def index():
     return render_template('index.html', posts=blog_posts)
@@ -28,6 +37,19 @@ def add():
         json_parcer.write_file('data.json', blog_posts)  # Save the updated blog posts to the JSON file
         return redirect(url_for('index')) 
     return render_template('add.html')
+
+
+@app.route('/delete/<string:post_id>')
+def delete(post_id):
+    # Find the blog post with the given id and remove it from the list
+    # Redirect back to the home page
+    if delete_post_by_id(post_id):
+            # Redirect to the home page after successful deletion
+            return redirect(url_for('index'))
+
+    # If post with given id is not found, redirect to the home page
+    return redirect(url_for('inxex'))
+    
 
 
 if __name__ == '__main__':

@@ -72,3 +72,19 @@ a.add-link:hover {
   color: #009933; /* Set the link color to green on hover */
   text-decoration: underline; /* Add underline on hover */
 }
+
+.delete-button {
+  background-color: #ff1493; /* Pink color for the button */
+  color: #fff; /* White text color */
+  padding: 10px 20px; /* Padding for the button */
+  border: none; /* Remove the border */
+  cursor: pointer; /* Show pointer cursor on hover */
+  margin-top: 10px; /* Add margin to separate the button from the post content */
+}
+
+/* Additional style for the form */
+.delete-form {
+  display: flex; /* Display the form as a flex container */
+  flex-direction: column; /* Place form items in a column */
+  align-items:flex-start; /* Center form items horizontally */
+}
