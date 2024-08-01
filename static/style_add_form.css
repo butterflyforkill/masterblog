@@ -1,0 +1,66 @@
+body {
+    display: flex;
+    justify-content:space-evenly;
+    align-items:center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(45deg, #FF66B3, #66FF99);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    flex-direction: column;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+h1 {
+    text-align:justify;
+    color: #ffffff;
+}
+
+form {
+    background-color: #a4ff72;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    display: inline-block;
+    border: 1px solid #009933;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: #ff66b3;
+}
+
+button[type="submit"] {
+    background-color: #ff66b3;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #ff99cc;
+}

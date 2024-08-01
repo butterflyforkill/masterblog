@@ -1,0 +1,54 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(45deg, #FF66B3, #66FF99);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    flex-direction: column;
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+h1 {
+    text-align: center;
+    color: #ff66b3; /* pink color */
+}
+
+.blog_name {
+    background-color: #66FF99; /* green color */
+    padding: 20px;
+    margin: 20px;
+}
+
+.post {
+    background-color: #a4ff72; /* green color */
+    padding: 20px;
+    margin: 20px 0;
+    width: 300px;
+    height: auto;
+}
+
+h2 {
+    color: #ff66b3; /* pink color */
+}
+
+p {
+    color: #009933; /* green color */
+}
+
+em {
+    color: #ff99cc; /* pink color */
+}
