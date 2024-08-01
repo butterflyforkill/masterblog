@@ -1,6 +1,14 @@
 [
-    {"id": 1, "author": "John Doe", "title": "First Post", "content": "This is my first post."
+    {
+        "id": "11945e89-bd99-4657-a5aa-d94c1d6170e5",
+        "title": "New k-drama that I watched",
+        "author": "Molina",
+        "content": "I rewatched kdrama with the name Reborn Rich.\r\nHighly reccomend it"
     },
-    {"id": 2, "author": "Jane Doe", "title": "Second Post", "content": "This is another post."
+    {
+        "id": "5b2553eb-c8ed-4d96-8230-2709f1d07923",
+        "title": "Insider - new not funny kdrama",
+        "author": "Molina",
+        "content": "Well, what can I say - I started to watch it a while ago, while writting code.\r\nIt's a good distraction for my brain"
     }
 ]

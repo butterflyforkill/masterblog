@@ -8,6 +8,7 @@ body {
     background-size: 400% 400%;
     animation: gradientBG 15s ease infinite;
     flex-direction: column;
+    padding-top: 80px;
 }
 
 @keyframes gradientBG {
@@ -28,16 +29,22 @@ h1 {
 }
 
 .blog_name {
-    background-color: #66FF99; /* green color */
-    padding: 20px;
-    margin: 20px;
+  position: fixed; /* Fix the position of the blog name */
+  top: 0; /* Position at the top of the page */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Adjust horizontally to center */
+  background-color: #66FF99; /* green color */
+  padding: 20px;
+  margin: 20px;
+  width: 100%; /* Set width to 100% */
+  text-align: center; /* Center the text */
 }
 
 .post {
     background-color: #a4ff72; /* green color */
     padding: 20px;
     margin: 20px 0;
-    width: 300px;
+    width: 600px;
     height: auto;
 }
 
@@ -51,4 +58,17 @@ p {
 
 em {
     color: #ff99cc; /* pink color */
+}
+
+a.add-link {
+  color: #ff66b3; /* Set the link color to pink */
+  text-decoration: none; /* Remove the underline */
+  font-weight: bold; /* Make the text bold */
+  background-color: #a4ff72;
+  
+}
+
+a.add-link:hover {
+  color: #009933; /* Set the link color to green on hover */
+  text-decoration: underline; /* Add underline on hover */
 }
