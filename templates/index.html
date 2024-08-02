@@ -7,20 +7,24 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
+
     <div class="blog_name"><h1>Welcome to My K-Drama Blog!</h1></div>
-    <a href="{{ url_for('add') }} " class="add-link">Add a new blog post</a>
+  
     {% for post in posts %}
     <div class="post">
             <h2>{{ post.title }}</h2>
             <p><em>Written by {{ post.author }}</em></p>
             <p>{{ post.content }}</p>
+            <div class='buttons'>
             <form action="{{ url_for('delete', post_id=post.id) }}" method="get" class="delete-form">
                 <button class="delete-button" type="submit">Delete</button>
             </form>
-            <form action="{{ url_for('update', post_id=post.id) }}" method="post" class="delete-form">
+            <form action="{{ url_for('update', post_id=post.id) }}" method="get" class="delete-form">
                 <button class="delete-button" type="submit">Update</button>
             </form>
+            </div>
     </div>
 {% endfor %}
+<a href="{{ url_for('add') }} " class="add-link">Add a new blog post</a>
 </body>
 </html>

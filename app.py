@@ -54,31 +54,29 @@ def delete(post_id):
             return redirect(url_for('index'))
 
     # If post with given id is not found, redirect to the home page
-    return redirect(url_for('inxex'))
+    return redirect(url_for('index'))
 
 
 @app.route('/update/<string:post_id>', methods=['GET', 'POST'])
 def update(post_id):
-    # Fetch the blog posts from the JSON file
     post = fetch_post_by_id(post_id)
     if post is None:
         # Post not found
         return "Post not found", 404
     
     if request.method == 'POST':
-        # Update the post in the JSON file
-        # Redirect back to index
+        # Update the post in the blog_posts list
         title = request.form.get('title')  # Get the title from the form
-        author = request.form.get('author')  # Get the author from the form
         content = request.form.get('content')  # Get the content from the form
-        new_post = {'id': post_id, 'title': title, 'author': author, 'content': content}
-        blog_posts.append(new_post)  # Append the new post to the blog_posts list
-        json_parcer.write_file('data.json', blog_posts)  # Save the updated blog posts to the JSON file
-        return redirect(url_for('index')) 
-
-    # Else, it's a GET request
-    # So display the update.html page
-    return render_template('update.html', post=post)
+        for blog_post in blog_posts:
+            if blog_post['id'] == post_id:
+                blog_post['title'] = title  # Update the title
+                blog_post['content'] = content  # Update the content
+                json_parcer.write_file('data.json', blog_posts)  # Save the updated blog posts to the JSON file
+                return redirect(url_for('index'))  # Redirect back to the index page
+    
+    # Display the update.html page with the current post details
+    return render_template('update.html', post_id=post_id)
 
 
 if __name__ == '__main__':
