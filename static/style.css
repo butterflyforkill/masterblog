@@ -1,14 +1,10 @@
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 15px;
-    background: linear-gradient(45deg, #FF66B3, #66FF99);
-    background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
-    flex-direction: column;
-    padding-top: 80px;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: linear-gradient(45deg, #FF66B3, #66FF99);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
 }
 
 @keyframes gradientBG {
@@ -23,80 +19,66 @@ body {
   }
 }
 
-h1 {
-    text-align: center;
-    color: #ff66b3; /* pink color */
+.blog_name {
+  text-align: center;
+  background-color: #5fdf94; /* Light green background */
+  padding: 20px;
 }
 
-.blog_name {
-  background-color: #66FF99; /* green color */
-  padding: 50px;
-  margin: 50px;
-  width: 100%; /* Set width to 100% */
-  text-align: center; /* Center the text */
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  padding: 10px 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow for depth */
-  z-index: 1000; /* Ensure it's at the forefront */
+.blog_name h1 {
+  color: #eb83e2; /* Green text */
+}
+
+main {
+  background: #f0f0f0; /* Light green background */
+  animation: background-color-change 10s infinite alternate ease-in-out;
+}
+
+@keyframes background-color-change {
+  from { background-color: #f0f0f0; }
+  to { background-color: #ffc0cb; } /* Light pink background */
 }
 
 .post {
-    background-color: #a4ff72; /* green color */
-    padding: 20px;
-    margin: 20px 0;
-    width: 600px;
-    height: auto;
+  margin: 20px;
+  border: 1px solid #ddd;
+  padding: 15px;
 }
 
-h2 {
-    color: #ff66b3; /* pink color */
+.post h2 {
+  margin-top: 0; /* Remove default top margin */
 }
 
-p {
-    color: #009933; /* green color */
-}
-
-em {
-    color: #ff99cc; /* pink color */
-}
-
-a.add-link {
-  color: #ff66b3; /* Set the link color to pink */
-  text-decoration: none; /* Remove the underline */
-  font-weight: bold; /* Make the text bold */
-  font-size: 34px;
-  background-color: #a4ff72;
-  
-}
-
-a.add-link:hover {
-  color: #009933; /* Set the link color to green on hover */
-  text-decoration: underline; /* Add underline on hover */
-}
-
-.buttons{
-  display: flex;
-  justify-content: space-between;
-  align-items:flex-start;
-  flex-direction: row;
+.buttons {
+  display: flex; /* Organize buttons horizontally */
+  justify-content: flex-end; /* Align buttons to the right */
+  margin-top: 10px;
 }
 
 .delete-button {
-  background-color: #ff1493; /* Pink color for the button */
-  color: #fff; /* White text color */
-  padding: 10px 20px; /* Padding for the button */
-  border: none; /* Remove the border */
-  cursor: pointer; /* Show pointer cursor on hover */
-  margin-top: 10px; /* Add margin to separate the button from the post content */
+  background-color: #FFC0CB; /* Light pink background */
+  color: #990000; /* Dark red text */
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
 }
 
-/* Additional style for the form */
-.delete-form {
-  display: flex; /* Display the form as a flex container */
-  flex-direction: column; /* Place form items in a column */
-  align-items:flex-start; /* Center form items horizontally */
+.delete-button:hover {
+  background-color: #F08080; /* Pink on hover */
+}
+
+.add-link {
+  display: inline-block;
+  margin: 20px 0 0 20px;
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #ffc0cb; /* Light pink background */
+  color: #990000; /* Dark red text */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.add-link:hover {
+  background-color: #F08080; /* Pink on hover */
 }
